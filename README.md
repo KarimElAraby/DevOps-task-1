@@ -17,3 +17,4 @@
 ### - From repo root, run "python ./tests/test_hello.py"
 ### - Make sure all tests are passing
 
+check triger 
