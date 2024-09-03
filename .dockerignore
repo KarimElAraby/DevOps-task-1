@@ -1,0 +1,7 @@
+#files are not related to images to reduce images's size
+
+Dockerfile
+README.md
+LICENSE
+Jenkinsfile
+.git
