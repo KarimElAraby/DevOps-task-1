@@ -12,6 +12,7 @@ pipeline {
             steps {
                 sh "echo 'Testing....'"
                 sh "docker run --name=botit-test karimaraby/botit-task-src:3.${env.BUILD_NUMBER} python ./tests/test_hello.py"
+            }
             post {
                 failure {
                     mail to: 'karimaraby3344@gmail.com',
@@ -19,7 +20,6 @@ pipeline {
                          body: "The test stage failed in the pipeline for ${env.JOB_NAME} build #${env.BUILD_NUMBER}. Please check the Jenkins console for details."
                  }
              }
-            }
         } 
         stage('push'){
             steps{
