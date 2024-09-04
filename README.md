@@ -1,18 +1,22 @@
-# Toy Flask Example
-## Below instructions are assuming using Linux
-## Prepare Envionment
-### - Clone this repo
-### - Make sure Python 3 is installed on your machine
-### - Create a new virtual environment using 'python -m venv exvenv'
-### - Activate the virtual environment using 'source PATH_TO_YOUR_ENVIRONMENT/bin/activate'
-### - Install contents of 'requirements.txt' into the new virtual environment using 'pip install -r PATH_TO_REPO_ROOT/requirements.txt'
+# DevOps Task 1 - Deployment Branch
+## Overview
 
-## Running the server
-### - Activate the new virtual environment
-### - From repo root, run "python ./src/hello.py"
-### - In your browser, go to 'http://127.0.0.1:5000' to confirm it's working
+This branch includes additional deployment tasks and enhancements such as Docker Compose setup, Kubernetes deployment, and monitoring using various tools.
+Bonus Tasks
 
-## Testing the server
-### - Make sure the virtual environment is activated
-### - From repo root, run "python ./tests/test_hello.py"
-### - Make sure all tests are passing
+   Docker Compose
+        A docker-compose.yml file is provided to run multiple containers with shared volumes and networks.
+        The setup allows for changes in the source code to be reflected within the container environment seamlessly.
+
+  Kubernetes (K8s) Deployment
+        A KinD cluster is used to deploy the application using a deployment.yaml file.
+        The deployment manages two replica sets, each running a container from the Docker image.
+        An Ingress controller is set up to expose the application externally.
+
+  Terraform for Infrastructure as Code (IAC)
+        Terraform scripts are provided to automate the provisioning of AWS infrastructure.
+        The setup includes VPC, subnets, security groups, EC2 instances, and more.
+
+  Monitoring and Logging
+        Implemented monitoring using AWS CloudWatch and a shell script for resource utilization alerts.
+        Prometheus is used for collecting metrics, and Grafana for visualizing the service health.
