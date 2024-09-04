@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: botit-app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./src:/app/src
+      - ./tests:/app/tests
+      - ./requirements.txt:/app/requirements.txt
+      - hello-data:/var/log   #for storge logs
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  hello-data:

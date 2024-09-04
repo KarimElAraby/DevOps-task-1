@@ -4,4 +4,9 @@ Dockerfile
 README.md
 LICENSE
 Jenkinsfile
-.git
+.git/
+k8s/
+docker-compose.yaml
+main.tf
+terra*
+.terra*

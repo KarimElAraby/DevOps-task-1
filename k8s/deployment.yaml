@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: botit
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: botit
+  template:
+    metadata:
+      labels:
+        app: botit
+    spec:
+      containers:
+        - name: botit
+          image: karimaraby/botit-task-src:3.0
+          ports:
+            - containerPort: 5000
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: botit
+spec:
+  ports:
+    - port: 80
+      targetPort: 5000
+  selector:
+    app: botit
